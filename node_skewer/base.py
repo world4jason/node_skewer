@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from typing import Any, List
 
 
-class Node(ABC):
+class NodeInterface(ABC):
     """
     The Node interface declares a method for building the chain of nodes.
     It also declares a method for executing a request.
@@ -18,7 +18,7 @@ class Node(ABC):
         pass
 
 
-class AbstractNode(Node):
+class Node(NodeInterface):
     """
     The default chaining behavior can be implemented inside a base node
     class.
@@ -27,7 +27,7 @@ class AbstractNode(Node):
         self.__next_node: Node = None
         self.__name = self.__class__.__name__
 
-    def set_successor(self, node: Node) -> Node:
+    def set_successor(self, node: NodeInterface) -> NodeInterface:
         self.__next_node = node
         return node
 

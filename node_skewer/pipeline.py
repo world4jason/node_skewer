@@ -1,8 +1,8 @@
-from node_skewer.base import AbstractNode, FeatureFushionMixin
+from node_skewer.base import Node, FeatureFushionMixin
 from abc import abstractmethod
 
 
-class AbstractFlow(AbstractNode):
+class AbstractFlow(Node):
     """
     Graph + Chain of Responsibililty
 
